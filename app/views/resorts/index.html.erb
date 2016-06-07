@@ -9,25 +9,21 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Lng</th>
-        <th>Lat</th>
-        <th>Flight cost</th>
-        <th>Airport</th>
-        <th>Forecast</th>
-        <th>State</th>
         <th>Name</th>
+        <th>State</th>
+        <th>Forecast</th>
+        <th>Airport</th>
+        <th>Flight cost</th>
         <th>Actions</th>
       </tr>
 
       <% @resorts.each do |resort| %>
       <tr>
-        <td><%= resort.lng %></td>
-        <td><%= resort.lat %></td>
-        <td><%= resort.flight_cost %></td>
-        <td><%= resort.airport %></td>
-        <td><%= resort.forecast %></td>
-        <td><%= resort.state %></td>
         <td><%= resort.name %></td>
+        <td><%= resort.state %></td>
+        <td><%= resort.forecast %></td>
+        <td><%= resort.airport %></td>
+        <td><%= resort.flight_cost %></td>
         <td>
           <a href="/resorts/<%= resort.id %>" class="btn btn-primary">Show</a>
           <a href="/resorts/<%= resort.id %>/edit" class="btn btn-warning">Edit</a>

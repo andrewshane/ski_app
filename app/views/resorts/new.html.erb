@@ -18,31 +18,49 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @resort.name %>">
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @resort.state %>">
+      </div>
+
       <!-- Label and input for lng -->
       <div class="form-group">
-        <label for="lng" class="control-label">
+        <label for="lng" class="hidden">
           Lng
         </label>
 
-        <input type="text" id="lng" name="lng" placeholder="Lng" class="form-control" value="<%= @resort.lng %>">
+        <input type="hidden" id="lng" name="lng" placeholder="Lng" class="form-control" value="<%= @resort.lng %>">
       </div>
 
       <!-- Label and input for lat -->
       <div class="form-group">
-        <label for="lat" class="control-label">
+        <label for="lat" class="hidden">
           Lat
         </label>
 
-        <input type="text" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @resort.lat %>">
+        <input type="hidden" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @resort.lat %>">
       </div>
 
       <!-- Label and input for flight_cost -->
       <div class="form-group">
-        <label for="flight_cost" class="control-label">
+        <label for="flight_cost" class="hidden">
           Flight cost
         </label>
 
-        <input type="text" id="flight_cost" name="flight_cost" placeholder="Flight cost" class="form-control" value="<%= @resort.flight_cost %>">
+        <input type="hidden" id="flight_cost" name="flight_cost" placeholder="Flight cost" class="form-control" value="<%= @resort.flight_cost %>">
       </div>
 
       <!-- Label and input for airport -->
@@ -56,29 +74,11 @@
 
       <!-- Label and input for forecast -->
       <div class="form-group">
-        <label for="forecast" class="control-label">
+        <label for="forecast" class="hidden">
           Forecast
         </label>
 
-        <input type="text" id="forecast" name="forecast" placeholder="Forecast" class="form-control" value="<%= @resort.forecast %>">
-      </div>
-
-      <!-- Label and input for state -->
-      <div class="form-group">
-        <label for="state" class="control-label">
-          State
-        </label>
-
-        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @resort.state %>">
-      </div>
-
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
-
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @resort.name %>">
+        <input type="hidden" id="forecast" name="forecast" placeholder="Forecast" class="form-control" value="<%= @resort.forecast %>">
       </div>
 
       <button class="btn btn-success">

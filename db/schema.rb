@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607222249) do
+ActiveRecord::Schema.define(version: 20160607223202) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "user_id"
     t.string   "resort_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inputs", force: :cascade do |t|
+    t.string   "airport_code"
+    t.date     "return"
+    t.date     "departure"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

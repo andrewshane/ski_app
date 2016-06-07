@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @input.errors.any? %>
+  <% @input.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Input #<%= @input.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_input/<%= @input.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for airport_code -->
+      <div class="form-group">
+        <label for="airport_code" class="control-label">
+          Airport code
+        </label>
+
+        <input type="text" id="airport_code" name="airport_code" placeholder="Airport code" class="form-control" value="<%= @input.airport_code %>">
+      </div>
+
+      <!-- Label and input for return -->
+      <div class="form-group">
+        <label for="return" class="control-label">
+          Return
+        </label>
+
+        <input type="text" id="return" name="return" placeholder="Return" class="form-control" value="<%= @input.return %>">
+      </div>
+
+      <!-- Label and input for departure -->
+      <div class="form-group">
+        <label for="departure" class="control-label">
+          Departure
+        </label>
+
+        <input type="text" id="departure" name="departure" placeholder="Departure" class="form-control" value="<%= @input.departure %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Input
+      </button>
+      or
+      <a href="/inputs/<%= @input.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

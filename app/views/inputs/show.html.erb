@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Input #<%= @input.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Airport code</dt>
+      <dd><%= @input.airport_code %></dd>
+
+      <dt>Return</dt>
+      <dd><%= @input.return %></dd>
+
+      <dt>Departure</dt>
+      <dd><%= @input.departure %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/inputs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/inputs/<%= @input.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_input/<%= @input.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

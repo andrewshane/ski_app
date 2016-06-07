@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Input resource:
+  # CREATE
+  get "/inputs/new", :controller => "inputs", :action => "new"
+  post "/create_input", :controller => "inputs", :action => "create"
+
+  # READ
+  get "/inputs", :controller => "inputs", :action => "index"
+  get "/inputs/:id", :controller => "inputs", :action => "show"
+
+  # UPDATE
+  get "/inputs/:id/edit", :controller => "inputs", :action => "edit"
+  post "/update_input/:id", :controller => "inputs", :action => "update"
+
+  # DELETE
+  get "/delete_input/:id", :controller => "inputs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Favorite resource:
   # CREATE
   get "/favorites/new", :controller => "favorites", :action => "new"
