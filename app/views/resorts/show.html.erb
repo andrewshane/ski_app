@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Resort #<%= @resort.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Lng</dt>
+      <dd><%= @resort.lng %></dd>
+
+      <dt>Lat</dt>
+      <dd><%= @resort.lat %></dd>
+
+      <dt>Flight cost</dt>
+      <dd><%= @resort.flight_cost %></dd>
+
+      <dt>Airport</dt>
+      <dd><%= @resort.airport %></dd>
+
+      <dt>Forecast</dt>
+      <dd><%= @resort.forecast %></dd>
+
+      <dt>State</dt>
+      <dd><%= @resort.state %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @resort.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/resorts" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/resorts/<%= @resort.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_resort/<%= @resort.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

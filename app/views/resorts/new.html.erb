@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @resort.errors.any? %>
+  <% @resort.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Resort</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_resort" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for lng -->
+      <div class="form-group">
+        <label for="lng" class="control-label">
+          Lng
+        </label>
+
+        <input type="text" id="lng" name="lng" placeholder="Lng" class="form-control" value="<%= @resort.lng %>">
+      </div>
+
+      <!-- Label and input for lat -->
+      <div class="form-group">
+        <label for="lat" class="control-label">
+          Lat
+        </label>
+
+        <input type="text" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @resort.lat %>">
+      </div>
+
+      <!-- Label and input for flight_cost -->
+      <div class="form-group">
+        <label for="flight_cost" class="control-label">
+          Flight cost
+        </label>
+
+        <input type="text" id="flight_cost" name="flight_cost" placeholder="Flight cost" class="form-control" value="<%= @resort.flight_cost %>">
+      </div>
+
+      <!-- Label and input for airport -->
+      <div class="form-group">
+        <label for="airport" class="control-label">
+          Airport
+        </label>
+
+        <input type="text" id="airport" name="airport" placeholder="Airport" class="form-control" value="<%= @resort.airport %>">
+      </div>
+
+      <!-- Label and input for forecast -->
+      <div class="form-group">
+        <label for="forecast" class="control-label">
+          Forecast
+        </label>
+
+        <input type="text" id="forecast" name="forecast" placeholder="Forecast" class="form-control" value="<%= @resort.forecast %>">
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @resort.state %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @resort.name %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Resort
+      </button>
+      or
+      <a href="/resorts">Cancel</a>
+    </form>
+  </div>
+</div>
